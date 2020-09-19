@@ -17,15 +17,7 @@ import glob
 @tf.function
 def weighted_binary_crossentropy(y_true, y_pred):
     # get the fraction of pixels that are one
-    pos_fraction = 1 - tf.math.zero_fraction(y_true)
-    ''' 
-    # when the pos_fraction is small, greater weight is applied to the positive labels
-    if pos_fraction <= 0.5:
-        weight = 25*tf.math.exp(-6.45 * pos_fraction)
-    else:
-        weight = 1.
-        
-    '''
+
 
     return tf.nn.weighted_cross_entropy_with_logits(y_true, y_pred, 10)
 
@@ -107,6 +99,7 @@ class ScratchDetector:
         c10 = Dropout(0.1)(c10)
         c10 = Conv2D(32, (3, 3), activation='relu', kernel_initializer='he_normal', padding='same')(c10)
 
+        #linear activation is used because the loss function used expects logit input.
         outputs = Conv2D(1, (1, 1), activation='linear')(c10)
 
         model = Model(inputs=[img_input], outputs=[outputs])

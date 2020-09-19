@@ -1,11 +1,9 @@
 import glob
-from keras.preprocessing.image import load_img, img_to_array
-import numpy as np
-from sklearn.model_selection import train_test_split
-import tensorflow as tf
-import matplotlib.pyplot as plt
-from mpl_toolkits.axes_grid1 import ImageGrid
 import os.path
+import matplotlib.pyplot as plt
+import numpy as np
+from keras.preprocessing.image import load_img, img_to_array
+from sklearn.model_selection import train_test_split
 
 
 class ScratchDataset:
