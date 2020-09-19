@@ -1,5 +1,5 @@
 # scratch-detection
-Tensorflow U-Net model for semantic segmentation of scratches from damaged films.
+Tensorflow U-Net model for semantic segmentation of scratches from damaged films. This project was completed as part of the Computer Engineering Image Processing course at McMaster University.
 
 ## Introduction
 
